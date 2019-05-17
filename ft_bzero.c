@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:32:57 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 13:07:35 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/17 13:53:02 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 void	ft_bzero(void *ptr, size_t len)
 {
 	size_t	loop;
+	char	*pr;
 
 	loop=0;
+	pr = ptr;
+	if (!ptr)
+		return ;
 	while(loop++ < len)
 	{
-		*ptr = 0;
+		*pr = 0;
 		ptr++;
 	}
 }

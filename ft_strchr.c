@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:42:32 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 11:17:31 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/17 14:13:09 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strchr(const char *restrict str, int c)
 {
-	int loop;
+	int		loop;
 
 	loop = 0;
 	while (str[loop] != '\0')
 	{
 		if (str[loop] == (char)c)
-			return (&str[loop]);
+			return ((char*)&str[loop]);
 		loop++;
-	}
+	}	
 	if (str[loop] == (char)c)
-		return (&str[loop]);
+		return ((char*)&str[loop]);
 	return (NULL);
 }

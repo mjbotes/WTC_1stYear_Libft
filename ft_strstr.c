@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:47:31 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 09:50:13 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/17 14:11:35 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strstr(const char *str1, const char *str2)
 		while (str2[inloop] == str1[loop + inloop])
 		{
 			if (str2[inloop + 1] == '\0')
-				return (str1[loop]);
+				return ((char*)&str1[loop]);
 		}
 	}
 	return (NULL);
