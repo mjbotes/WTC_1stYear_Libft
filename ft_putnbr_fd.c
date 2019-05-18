@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 11:10:37 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 12:06:07 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 12:08:55 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 12:11:25 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void ft_putnbr_fd(int n, int fd)
 {
-	int loop;
-
-	loop = 0;
-	while (s[loop] != '\0')
-	{
-		ft_putchar(s[loop]);
-		loop++;
-	}
+	char	*new;
+	new = ft_itoa(n);
+	ft_putstr_fd(new, fd);
 }
