@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:39:18 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 14:05:02 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/18 13:49:39 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@ void *ft_memcpy(void *dest, const void *src, size_t len)
 	unsigned char	*ptr2;
 	size_t			loop;
 
+	loop = 0;
 	ptr = (unsigned char*)dest;
 	ptr2 = (unsigned char*)src;
-	loop = 0;
 	while (loop < len)
 	{
-		*ptr = *ptr2;
+		ptr[loop] = ptr2[loop];
 		loop++;
-		ptr++;
-		src++;
 	}
 	return (dest);
 }

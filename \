@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 12:08:55 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 14:23:59 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 09:26:15 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 14:37:45 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+int	ft_atoi(const char *restrict str)
 {
-	char	*new;
-	new = ft_itoa(n);
-	ft_putstr_fd(new, fd);
+	int	sign;
+	int	res;
+	int	loop;
+
+	sign = 1;
+	res = 0;
+	loop = 0;
+	if (str[0] == '-')
+	{
+		sign = -1;
+		loop++;
+	}
+	while (ft_isdigit(str[loop]) == 1)
+	{
+		res = res * 10;
+		res += str[loop]-48;
+		loop++;
+	}
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:36:38 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 13:58:43 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/18 14:19:20 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t len)
 	unsigned char	*ptr;
 	unsigned char	*ptr2;
 	size_t		loop;
-	char		find;
+	unsigned char		find;
 
 	loop = 0;
-	ptr2 = (unsigned char*)src;
+	find = (unsigned char)c;
 	ptr = (unsigned char*)dest;
-	find = (char)c;
-	while(loop < len && (*ptr2) != find)
+	ptr2 = (unsigned char*)src;
+	while(loop < len )
 	{
-		*ptr = *ptr2;
+		ptr[loop] = ptr2[loop];
+		if (ptr[loop] == find)
+			return ((void*)ptr + loop + 1);
 		loop++;
-		ptr++;
-		src++;
 	}
-	return (dest);
+	return (NULL);
 }

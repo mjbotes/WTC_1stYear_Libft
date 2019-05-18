@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:37:11 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 09:37:34 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/18 14:18:19 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@ void	*ft_memchr(const void *str, int c, size_t len)
 {
 	size_t		loop;
 	unsigned char	*ptr;
-	char		find;
+	unsigned char	find;
 
 	loop=0;
-	find = (char)c;
+	find = (unsigned char)c;
 	ptr = (unsigned char*)str;
-	while (loop < len && (*ptr) == find)
-	{
+	while (loop <= len && ptr[loop] != find)
 		loop++;
-		ptr++;
-	}
-	if (*ptr == find)
-		return (ptr);
+	if (ptr[loop] == find)
+		return (&ptr[loop]);
 	return (NULL);
 }
