@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:46:22 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 14:10:21 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/18 08:44:43 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strnstr(const char *str1, const char *str2, size_t len)
 {
-	char	*ptr1;
 	size_t	loop;
 	size_t	inloop;
 

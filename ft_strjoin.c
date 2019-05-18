@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:38:28 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 09:01:36 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 09:11:49 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			size;
+	size_t			len1;
+	size_t			len2;
 	unsigned int	loop;
-	char			*str;
+	char			*new;
 
-	size = 0;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	loop = 0;
-	while (s[size] != '\0')
-		size++;
-	size++;
-	str = malloc(sizeof(char) * size);
-	while (loop < size)
+	if (!(new = malloc(sizeof(char) * (len1 + len2 + 1))))
+		return (NULL);
+	while (loop < len1)
 	{
-		str[loop]=f(loop, (char)s[loop]);
+		new[loop] = s1[loop];
 		loop++;
 	}
-	str[loop] = '\0';
-	return (str);
-}
+	loop = 0;
+	while (loop < len2)
+	{
+		new[len1 + loop] = s2[loop];
+		loop++;
+	}
+	new[loop] = '\0';
+	return (new);
+}	

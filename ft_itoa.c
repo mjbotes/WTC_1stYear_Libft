@@ -1,34 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:38:28 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 10:48:12 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 11:04:57 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_itoa(int n)
 {
-	size_t			size;
 	unsigned int	loop;
-	char			*str;
+	char			*new;
+	int				num;
+	int				rem;
 
-	size = 0;
 	loop = 0;
-	while (s[size] != '\0')
-		size++;
-	size++;
-	str = malloc(sizeof(char) * size);
-	while (loop < size)
+	num = n;
+	if (n < 0)
 	{
-		str[loop]=f(loop, (char)s[loop]);
+		loop++;
+		num = num * -1;
+	}
+	while (num > 10)
+	{
+		num = num / 10;
 		loop++;
 	}
-	str[loop] = '\0';
-	return (str);
+	if (!(new = malloc(sizeof(char) * loop)))
+		return (NULL);
+	num = n;
+	loop = 0;
+	if (n < 0)
+	{
+		new[loop] = '-';
+		loop++;
+	}
+	while (num >= 1)
+	{
+		rem = num % 10;
+		num = num / 10;
+		new[loop] = rem + 48;
+		loop++;
+	}
+	new[loop+1] = '\0';
+	return (new);	
 }

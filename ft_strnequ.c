@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:38:28 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 08:50:18 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 08:51:10 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t			size;
-	unsigned int	loop;
-	char			*str;
-
-	size = 0;
-	loop = 0;
-	while (s[size] != '\0')
-		size++;
-	size++;
-	str = malloc(sizeof(char) * size);
-	while (loop < size)
-	{
-		str[loop]=f(loop, (char)s[loop]);
-		loop++;
-	}
-	str[loop] = '\0';
-	return (str);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	return (0);
 }

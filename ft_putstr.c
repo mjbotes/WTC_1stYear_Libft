@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:38:28 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 11:10:37 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 11:13:58 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putstr(char const *s)
 {
-	size_t			size;
-	unsigned int	loop;
-	char			*str;
+	int loop;
 
-	size = 0;
 	loop = 0;
-	while (s[size] != '\0')
-		size++;
-	size++;
-	str = malloc(sizeof(char) * size);
-	while (loop < size)
+	while (s[loop] != '\0')
 	{
-		str[loop]=f(loop, (char)s[loop]);
+		ft_putchar(s[loop]);
 		loop++;
 	}
-	str[loop] = '\0';
-	return (str);
 }

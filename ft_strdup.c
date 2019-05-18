@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 10:07:34 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 10:07:48 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/18 08:43:09 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *strdup(const char *str)
 	size_t	size;
 
 	loop = 0;
-	while (*new++ != '\0')
+	while (*str++ != '\0')
 		loop++;
 	size = loop+1;
 	loop = 0;

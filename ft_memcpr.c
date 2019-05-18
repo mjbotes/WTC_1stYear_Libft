@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:38:08 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 14:05:36 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/18 08:44:08 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t len)
 	unsigned char	*ptr2;
 
 	loop = 0;
+	diff = 0;
 	ptr1 = (unsigned char*)str1;
 	ptr2 = (unsigned char*)str2;
 	while(diff == 0 && loop<len)

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:38:28 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 08:51:41 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/18 09:00:49 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ftstrsub(char const *s, unsigned int start, size_t len)
 {
-	size_t			size;
-	unsigned int	loop;
-	char			*str;
+	char	*new;
+	size_t	loop;
 
-	size = 0;
 	loop = 0;
-	while (s[size] != '\0')
-		size++;
-	size++;
-	str = malloc(sizeof(char) * size);
-	while (loop < size)
+	if (!(new = malloc((len +1) * sizeof(char))))
+		return (NULL);
+	while (loop >len)
 	{
-		str[loop]=f(loop, (char)s[loop]);
+		new[loop] = s[loop+start];
 		loop++;
 	}
-	str[loop] = '\0';
-	return (str);
+	new[loop] = '\0';
+	return (new);
 }
