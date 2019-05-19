@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 09:18:38 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 09:33:41 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/19 10:00:50 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			len;
-	unsigned int	start;
-	unsigned int	end;
+	size_t			size;
 	unsigned int	loop;
-	char			*new;
+	char			*str;
 
-	len = ft_strlen(s);
-	start = 0;
+	size = 0;
 	loop = 0;
-	while (ft_iswhitespace(s[start]) == 1 && s[start] != '\0')
-		start++;
-	end = len - 1;
-	while (ft_iswhitespace(s[end]) == 1 && end > start)
-		end--;
-	len = end - start + 1;
-	if (!(new = malloc(len * sizeof(char))))
+	size = ft_strlen(s);
+	if (!(str = malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	while (loop < len)
+	while (s[loop] != '\0')
 	{
-		new[loop] = s[start + loop];
-		loop++;
+		str[loop]=f(loop, (char)s[loop]);
+		++loop;
 	}
-	new[loop] = '\0';
-	return (new);
+	str[loop] = '\0';
+	return (str);
 }

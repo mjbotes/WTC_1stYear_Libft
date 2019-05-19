@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:26:15 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 14:37:45 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 09:36:09 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/19 09:28:24 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int	ft_atoi(const char *restrict str)
+void	*ft_memalloc(size_t size)
 {
-	int	sign;
-	int	res;
-	int	loop;
+	char	*ptr;
 
-	sign = 1;
-	res = 0;
-	loop = 0;
-	if (str[0] == '-')
-	{
-		sign = -1;
-		loop++;
-	}
-	while (ft_isdigit(str[loop]) == 1)
-	{
-		res = res * 10;
-		res += str[loop]-48;
-		loop++;
-	}
-	return (res);
+	if (!(ptr = malloc(size)))
+		return (NULL);
+	ft_bzero(ptr,size);
+	return (ptr);
 }

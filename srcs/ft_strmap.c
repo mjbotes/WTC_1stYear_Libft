@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:37:11 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 14:18:19 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 07:21:52 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/19 09:56:41 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t len)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t		loop;
-	unsigned char	*ptr;
-	unsigned char	find;
+	size_t			size;
+	unsigned int	loop;
+	char			*str;
 
-	loop=0;
-	find = (unsigned char)c;
-	ptr = (unsigned char*)str;
-	while (loop <= len && ptr[loop] != find)
+	size = 0;
+	loop = 0;
+	size = ft_strlen(s);
+	if (!(str = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	while (loop < size)
+	{
+		str[loop]=f((char)s[loop]);
 		loop++;
-	if (ptr[loop] == find)
-		return (&ptr[loop]);
-	return (NULL);
+	}
+	str[loop] = '\0';
+	return (str);
 }

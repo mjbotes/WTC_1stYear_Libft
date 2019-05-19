@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:26:15 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 15:17:34 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/19 13:13:04 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/19 13:24:43 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int	ft_atoi(const char *restrict str)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	sign;
-	int	res;
-	int	loop;
+	size_t				i;
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-	sign = 1;
-	res = 0;
-	loop = 0;
-	while (ft_iswhitespace(str[loop] == 1))
-		loop++;
-	if (str[0] == '-')
-	{
-		sign = -1;
-		loop++;
-	}
-	while (ft_isdigit(str[loop]) == 1 && str[loop] != '\0')
-	{
-		res = res * 10;
-		res += str[loop]-48;
-		loop++;
-	}
-	if (loop == 0)
-		return (0);
-	return (res * sign);
+	ptr = (unsigned char*)dst;
+	ptr2 = (unsigned char*)src;
+	i = 0;
+	if (ptr2 < ptr)
+		while (++i <= len)
+			ptr[len - i] = ptr2[len - i];
+	else
+		while (len-- > 0)
+			*(ptr++) = *(ptr2++);
+	return (dst);
 }

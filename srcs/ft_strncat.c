@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 11:05:31 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 11:09:38 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 09:44:19 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/19 10:10:50 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strncat(char *restrict str1, const char *restrict str2, size_t len)
 {
-	write(1, &c, 1);
+	unsigned char	*src;
+	size_t			loop;
+	size_t			inloop;
+
+	src = (unsigned char *)str2;
+	loop = 0;
+	inloop = 0;
+	while(str1[loop] != '\0')
+		loop++;
+	while(src[inloop] != '\0' && inloop < len)
+	{
+		str1[loop] = src[inloop];
+		inloop++;
+		loop++;
+	}
+	str1[loop] = '\0';
+	return (str1);
 }

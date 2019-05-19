@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 10:06:36 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 13:11:38 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/19 12:54:25 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/19 12:58:32 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t len)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t	loop;
-	size_t	len_dst;
-	size_t	len_src;
+	t_list	*ptr;
+	t_list	*next;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	loop = 0;
-	if (len < len_dst +1)
-		return (len_src + len);
-	while (loop < len_src)
+	ptr = lst;
+	while(ptr->next != NULL)
 	{
-		dst[len_src + loop] = src[loop];
-		loop++;
+		next = ptr->next;
+		f(ptr);
+		ptr = next;
 	}
-	dst[len_src + loop] = '\0';
-	return (len_src + len_dst);
+	f(ptr);
 }
