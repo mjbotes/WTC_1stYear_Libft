@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 11:10:37 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 12:06:07 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/18 09:15:56 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/20 08:50:15 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int	ft_iswhitespace(char c)
 {
-	int loop;
-
-	loop = 0;
-	while (s[loop] != '\0')
-	{
-		ft_putchar(s[loop]);
-		loop++;
-	}
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\r' || c == '\f');
 }

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:40:40 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/17 11:23:59 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 09:40:11 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/20 15:17:15 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *restrict str1, const char *restrict str2)
+void	*ft_memset(void *pr, int value, size_t len)
 {
-	size_t	loop;
-	size_t	inloop;
-	char	*src;
-	
-	src = (char *)str2;
-	loop = 0;
-	inloop = 0;
-	while (str1[loop] != '\0')
-		loop++;
-	while (src[inloop] != '\0')
+	unsigned char	*ptr;
+	size_t		loop;
+
+	ptr = (unsigned char*)pr;
+	loop=0;
+	while (loop++ < len)
 	{
-		str1[loop] = src[inloop];
-		loop++;
-		inloop++;
+		*ptr = value;
+		ptr++;
 	}
-	str1[loop] = '\0';
-	return (str1);
+	return (pr);
 }

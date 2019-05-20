@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:46:55 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:48:32 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 11:15:07 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/20 16:48:42 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *restrict str, int c)
+int	ft_strcmp(char const *restrict str1, char const *restrict str2)
 {
-	int loop;
-
-	loop = 0;
-	while (str[loop] != '\0')
-		loop++;
-	while (loop >= 0)
-	{
-		if (str[loop] == (char)c)
-			return ((char*)&str[loop]);
-		loop--;
-	}
-	return (NULL);
+	return (ft_strncmp(str1, str2, ft_strlen(str1)+1));
 }

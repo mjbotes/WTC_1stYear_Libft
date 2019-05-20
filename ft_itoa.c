@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 10:48:12 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/19 09:26:03 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/20 07:55:45 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_itoa(int n)
 {
 	unsigned int	loop;
 	char			*new;
-	int				num;
+	long int		num;
 	int				rem;
 
 	loop = 0;
@@ -36,14 +36,11 @@ char	*ft_itoa(int n)
 	if (!(new = malloc(sizeof(char) * (loop+1))))
 		return (NULL);
 	num = n;
+	if (n < 0)
+		num = num * -1;
 	new[loop] = '\0';
 	loop--;
-	if (num < 0)
-	{
-		new[0] = '-';
-		num = num * -1;
-	}
-	while (num > 10)
+	while (num >= 10)
 	{
 		rem = num % 10;
 		num = num / 10;
@@ -51,5 +48,7 @@ char	*ft_itoa(int n)
 		loop--;
 	}
 	new[loop] = num + '0';
+	if (n < 0)
+		new[--loop] = '-';
 	return (new);	
 }

@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:46:22 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:44:43 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 11:14:04 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/20 16:33:23 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str1, const char *str2, size_t len)
+char	*ft_strcpy(char *restrict dst, const char *restrict src)
 {
-	size_t	loop;
-	size_t	inloop;
-
-	loop = 0;
-	while (str1[loop] != '\0' && loop < len)
-	{
-		inloop = 0;
-		while (str2[inloop] == str1[loop + inloop] && loop + inloop < len)
-		{
-			if (str2[inloop + 1] == '\0')
-				return ((char*)&str1[loop]);
-			inloop++;
-		}
-		loop++;
-	}
-	return (NULL);
+	return (ft_strncpy(dst, src, ft_strlen(src) + 1));
 }

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:38:08 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/18 08:44:08 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 09:42:32 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/20 16:41:52 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *str1, const void *str2, size_t len)
+char	*ft_strchr(const char *restrict str, int c)
 {
-	int	diff;
-	size_t	loop;
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
+	int		loop;
 
 	loop = 0;
-	diff = 0;
-	ptr1 = (unsigned char*)str1;
-	ptr2 = (unsigned char*)str2;
-	while(diff == 0 && loop<len)
+	while (str[loop] != '\0')
 	{
-		diff = ptr1[loop] - ptr2[loop];
+		if (str[loop] == (char)c)
+			return ((char*)&str[loop]);
 		loop++;
-	}
-	return (diff);
+	}	
+	if (str[loop] == (char)c)
+		return ((char*)&str[loop]);
+	return (NULL);;
 }

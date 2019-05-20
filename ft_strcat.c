@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:26:15 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/19 14:27:57 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/17 09:40:40 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/20 16:36:16 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	ft_atoi(const char *restrict str)
+char	*ft_strcat(char *restrict str1, const char *restrict str2)
 {
-	int	sign;
-	int	res;
-	int	loop;
-
-	sign = 1;
-	res = 0;
+	/*size_t	loop;
+	size_t	inloop;
+	char	*src;
+	
+	src = (char *)str2;
 	loop = 0;
-	while (ft_iswhitespace(str[loop] == 0))
+	inloop = 0;
+	while (str1[loop] != '\0')
 		loop++;
-	if (str[0] == '-')
+	while (src[inloop] != '\0')
 	{
-		sign = -1;
+		str1[loop] = src[inloop];
 		loop++;
+		inloop++;
 	}
-	if (str[0] == '+')
-		loop++;
-	while (ft_isdigit(str[loop]) == 1 && str[loop] != '\0')
-	{
-		res = res * 10;
-		res += str[loop]-48;
-		loop++;
-	}
-	if (loop == 0)
-		return (0);
-	return (res * sign);
+	str1[loop] = '\0';
+	return (str1);*/
+
+	return (ft_strncat(str1, str2, ft_strlen(str1) + ft_strlen(str2) + 1));
 }
