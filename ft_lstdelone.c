@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 12:25:59 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/20 16:31:33 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 11:13:42 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	t_list	*ptr;
-
-	ptr= *alst;
-	del(alst, ptr->content_size);
-	free(ptr);
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
 	*alst = NULL;
 }

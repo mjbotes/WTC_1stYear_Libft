@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 12:06:27 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/19 10:17:44 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 09:34:41 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_putstr_fd(s,fd);
+	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

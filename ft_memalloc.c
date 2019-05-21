@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:36:09 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/19 09:28:24 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 09:57:41 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memalloc(size_t size)
 
 	if (!(ptr = malloc(size)))
 		return (NULL);
-	ft_bzero(ptr,size);
+	ft_bzero(ptr, size);
 	return (ptr);
 }

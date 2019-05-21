@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:45:52 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/20 11:34:38 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 09:11:05 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnew(size_t size)
 	size_t	loop;
 
 	loop = 0;
-	if (!(new = malloc(sizeof(char) * (size+1))))
+	if (!(new = malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	while (loop <= size)
 		new[loop++] = '\0';

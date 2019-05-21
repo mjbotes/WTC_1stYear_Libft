@@ -6,24 +6,13 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:42:32 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/20 16:41:52 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 10:15:35 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *restrict str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	int		loop;
-
-	loop = 0;
-	while (str[loop] != '\0')
-	{
-		if (str[loop] == (char)c)
-			return ((char*)&str[loop]);
-		loop++;
-	}	
-	if (str[loop] == (char)c)
-		return ((char*)&str[loop]);
-	return (NULL);;
+	return (ft_memchr(str, c, ft_strlen(str) + 1));
 }

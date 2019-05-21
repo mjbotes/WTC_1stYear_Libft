@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 10:00:58 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/20 13:08:32 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 11:44:35 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int		ft_wordcounter(char const *s, char c)
 		{
 			while (s[loop + 1] == c && s[loop + 1])
 				loop++;
-			sizex=0;
+			sizex = 0;
 			while (s[loop + sizex + 1] != c && s[loop + sizex + 1])
 				sizex++;
-			loop=loop + sizex;
+			loop = loop + sizex;
 			if (sizex != 0)
 				sizey++;
 		}
@@ -39,21 +39,14 @@ int		ft_wordcounter(char const *s, char c)
 	return (sizey);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_wordsplit(char const *s, char c, char **arr)
 {
-	char			**arr;
 	unsigned int	loop;
 	unsigned int	sizey;
 	unsigned int	sizex;
-	
-	if (s == NULL)
-		return (NULL);
+
+	sizey = 0;
 	loop = 0;
-	sizey = 0;
-	sizey = ft_wordcounter(s,c);
-	if (!(arr = (char**)malloc(sizeof(char*) * sizey)))
-		return (NULL);
-	sizey = 0;
 	while (s[loop])
 	{
 		if (s[loop] == c || loop == 0)
@@ -66,8 +59,7 @@ char	**ft_strsplit(char const *s, char c)
 			if (sizex != 0)
 			{
 				arr[sizey] = ft_strnew(sizex);
-				arr[sizey] = ft_strsub(s, loop, sizex);
-				sizey++;
+				arr[sizey++] = ft_strsub(s, loop, sizex);
 			}
 			loop = loop + sizex - 1;
 		}
@@ -76,3 +68,19 @@ char	**ft_strsplit(char const *s, char c)
 	return (arr);
 }
 
+char	**ft_strsplit(char const *s, char c)
+{
+	char			**arr;
+	unsigned int	loop;
+	unsigned int	sizey;
+
+	if (s == NULL)
+		return (NULL);
+	loop = 0;
+	sizey = ft_wordcounter(s, c);
+	if (!(arr = (char**)malloc(sizeof(char*) * (sizey + 1))))
+		return (NULL);
+	arr = ft_wordsplit(s, c, arr);
+	arr[sizey] = NULL;
+	return (arr);
+}

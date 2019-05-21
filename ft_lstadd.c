@@ -6,14 +6,14 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 12:51:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/20 06:58:23 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/21 10:06:47 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
-{	
+{
 	new->next = *alst;
-	*alst=new;
+	*alst = new;
 }
