@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 11:14:04 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/21 08:44:48 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/22 12:47:56 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	return (ft_strncpy(dst, src, ft_strlen(src) + 1));
+	return (ft_memcpy(dst, src, ft_strlen(src) + 1));
 }
