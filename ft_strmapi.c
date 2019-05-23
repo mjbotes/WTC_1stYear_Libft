@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 07:30:23 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/23 11:08:25 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 13:36:42 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s == NULL)
 		return (NULL);
 	size = ft_strlen(s);
-    if (!(str = ft_strnew(size)))
+	if (!(str = ft_strnew(size)))
 		return (NULL);
 	while (s[loop] != '\0')
 	{

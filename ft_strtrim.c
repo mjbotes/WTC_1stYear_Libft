@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 09:18:38 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/23 11:53:28 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 13:35:31 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	len = ft_strlen(s);
 	if (ft_strlen(s) == 0)
-	{
-		new = ft_strnew(1);
-		return (new);
-	}
+		return (ft_strnew(1));
 	while (ft_iswhitespace(s[start]) == 1 && s[start] != '\0')
 		start++;
 	end = len - 1;

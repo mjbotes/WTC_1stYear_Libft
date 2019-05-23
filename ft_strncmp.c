@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:44:54 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/23 12:05:55 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 14:04:28 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 
 int	ft_strncmp(char const *s1, char const *s2, size_t len)
 {
-	size_t ln;
+	size_t	loop;
+	int		diff;
 
-	ln = len;
-	if (ft_strlen(s1) < len)
-		ln = ft_strlen(s1) + 1;
-	return (memcmp(s1,s2,ln));		
+	loop = 0;
+	if (len == 0)
+		return (0);
+	diff = (unsigned char)s1[loop] - (unsigned char)s2[loop];
+	while (diff == 0 && loop < len - 1 && s1[loop] && s2[loop])
+	{
+		loop++;
+		diff = (unsigned char)s1[loop] - (unsigned char)s2[loop];
+	}
+	return (diff);
 }

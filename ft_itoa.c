@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 10:48:12 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/21 10:15:18 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 13:32:40 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 
 	loop = ft_intlen(n);
 	if (!(new = ft_strnew(loop)))
-        return (NULL);
+		return (NULL);
 	num = n;
 	if (n < 0)
 		num = num * -1;
