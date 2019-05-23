@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 07:13:57 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/21 10:01:59 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 11:05:55 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_striter(char *s, void (*f)(char	*))
 	unsigned int	loop;
 
 	loop = 0;
-	while (s[loop] != '\0')
-		f(&s[loop++]);
+	if (s != NULL)
+		while (s[loop] != '\0')
+			f(&s[loop++]);
 }

@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:43:19 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/21 10:05:31 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 11:04:36 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_strclr(char *s)
 	size_t	loop;
 
 	loop = 0;
-	while (s[loop] != '\0')
-		s[loop++] = '\0';
+	if (s != NULL)
+		while (s[loop] != '\0')
+			s[loop++] = '\0';
 }

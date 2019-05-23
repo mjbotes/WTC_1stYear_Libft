@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 09:18:38 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/21 09:12:32 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/23 11:53:28 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ char	*ft_strtrim(char const *s)
 	unsigned int	loop;
 	char			*new;
 
-	len = ft_strlen(s);
 	start = 0;
 	loop = -1;
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen(s);
 	if (ft_strlen(s) == 0)
 	{
 		new = ft_strnew(1);
