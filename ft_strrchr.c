@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *restrict str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int loop;
 
