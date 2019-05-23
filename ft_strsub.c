@@ -18,7 +18,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	loop;
 
 	loop = -1;
-	if (!(new = ft_strnew(len + 1)))
+	if (!(new = ft_strnew(len)))
 		return (NULL);
 	while (++loop < len)
 		new[loop] = s[loop + start];

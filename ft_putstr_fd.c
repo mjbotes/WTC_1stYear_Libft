@@ -17,9 +17,10 @@ void	ft_putstr_fd(char const *s, int fd)
 	unsigned int	loop;
 
 	loop = 0;
-	while (s[loop] != '\0')
-	{
-		ft_putchar_fd(s[loop], fd);
-		loop++;
-	}
+    if (s != NULL)
+        while (s[loop] != '\0')
+        {
+            ft_putchar_fd(s[loop], fd);
+            loop++;
+        }
 }

@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		n = -n;
 	}
-	if (n == -2147483648)
+    if (n == -2147483648)
 	{
 		ft_putchar_fd('2', fd);
 		n %= 1000000000;

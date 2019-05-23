@@ -21,7 +21,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size = 0;
 	loop = 0;
 	size = ft_strlen(s);
-	if (!(str = ft_strnew(size + 1)))
+    if (size > 0)
+        if (!(str = ft_strnew(size)))
 		return (NULL);
 	while (loop < size)
 	{

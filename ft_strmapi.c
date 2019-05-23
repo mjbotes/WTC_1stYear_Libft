@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	loop = 0;
 	size = ft_strlen(s);
-	if (!(str = ft_strnew(size + 1)))
+    if (!(str = ft_strnew(size)))
 		return (NULL);
 	while (s[loop] != '\0')
 	{

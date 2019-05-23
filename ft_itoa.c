@@ -39,7 +39,8 @@ char	*ft_itoa(int n)
 	int				rem;
 
 	loop = ft_intlen(n);
-	new = ft_strnew(loop);
+	if (!(new = ft_strnew(loop)))
+        return (NULL);
 	num = n;
 	if (n < 0)
 		num = num * -1;
