@@ -21,3 +21,14 @@ char	*ft_strdup(const char *str)
 	ft_strcpy(new, str);
 	return (new);
 }
+
+char    *ft_strndup(const char *str, size_t len)
+{
+    char    *new;
+    
+    if (!(new = ft_strnew(len)))
+        return (NULL);
+    ft_strncpy(new, str, len + 1);
+    new[len] = '\0';
+    return (new);
+}

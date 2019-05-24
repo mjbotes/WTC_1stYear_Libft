@@ -14,15 +14,7 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*new;
-	size_t	loop;
-
-	loop = -1;
-	if (s == NULL)
-		return (NULL);
-	if (!(new = ft_strnew(len)))
-		return (NULL);
-	while (++loop < len)
-		new[loop] = s[loop + start];
-	return (new);
+    if (s == NULL)
+        return(NULL);
+	return (ft_strndup(&s[start], len));
 }

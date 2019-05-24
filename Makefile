@@ -16,7 +16,7 @@ OBJECTS =	ft_isalnum.o ft_itoa.o ft_memdel.o ft_putnbr.o ft_strclr.o ft_striter.
 			ft_bzero.o ft_iswhitespace.o ft_memcpy.o ft_putendl_fd.o ft_strchr.o ft_strequ.o ft_strmap.o ft_strnew.o ft_strtrim.o\
 			ft_memmove.o ft_lstadd.o ft_lstdel.o ft_lstdelone.o ft_lstiter.o ft_lstmap.o ft_lstnew.o
 
-INCLUDES = ./includes/libft.h
+INCLUDES = libft.h
 
 all: $(NAME)
 
