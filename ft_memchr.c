@@ -24,5 +24,5 @@ void	*ft_memchr(const void *str, int c, size_t len)
 	while (loop < len)
 		if (ptr[loop++] == find)
 			return ((unsigned char*)&ptr[loop - 1]);
-	return (0);
+	return (NULL);
 }

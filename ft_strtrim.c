@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 09:18:38 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/23 13:35:31 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/27 15:25:39 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ char	*ft_strtrim(char const *s)
 	while (ft_iswhitespace(s[end]) == 1 && end >= start)
 		end--;
 	len = end - start + 1;
-	if (!(new = ft_strnew(len)))
+	if (!(new = ft_strsub(s, start, len)))
 		return (NULL);
-	while (++loop < len)
-		new[loop] = s[start + loop];
 	return (new);
 }

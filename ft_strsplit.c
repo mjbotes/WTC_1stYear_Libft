@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 10:00:58 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/21 11:44:35 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/27 10:58:06 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ char	**ft_wordsplit(char const *s, char c, char **arr)
 			while (s[loop + sizex] != c && s[loop + sizex])
 				sizex++;
 			if (sizex != 0)
-			{
-				arr[sizey] = ft_strnew(sizex);
 				arr[sizey++] = ft_strsub(s, loop, sizex);
-			}
 			loop = loop + sizex - 1;
 		}
 		loop++;
