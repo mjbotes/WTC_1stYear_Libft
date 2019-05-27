@@ -6,37 +6,35 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 12:59:29 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/23 13:51:51 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/27 16:06:23 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_lstpushback(t_list **lst, t_list *new)
+{
+	t_list	*ptr;
+
+	ptr = *lst;
+	if (ptr == NULL)
+		ft_lstadd(lst, new);
+	else
+	{
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+		ptr->next = new;
+	}
+}
+
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*prev;
 	t_list	*ptr;
-	t_list	*next;
-	t_list	*new;
 
-	if (lst == NULL)
-		return (NULL);
-	ptr = lst;
-	next = ptr->next;
-	if (!(new = f(ptr)))
-		return (NULL);
-	ptr = next;
-	prev = new;
-	while (ptr->next != NULL)
+	while (lst != NULL)
 	{
-		next = ptr->next;
-		if (!(ptr = f(ptr)))
-			return (NULL);
-		prev->next = ptr;
-		prev = ptr;
-		ptr = next;
+		ft_lstpushback(&ptr, f(lst));
+		lst = lst->next;
 	}
-	ptr = f(ptr);
-	prev->next = ptr;
-	return (new);
+	return (ptr);
 }
