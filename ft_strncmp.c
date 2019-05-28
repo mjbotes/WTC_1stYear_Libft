@@ -6,25 +6,20 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 09:44:54 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/23 14:04:28 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/28 07:33:13 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char const *s1, char const *s2, size_t len)
+int	ft_strncmp(char const *s1, char const *s2, size_t n)
 {
-	size_t	loop;
-	int		diff;
+	size_t	i;
 
-	loop = 0;
-	if (len == 0)
-		return (0);
-	diff = (unsigned char)s1[loop] - (unsigned char)s2[loop];
-	while (diff == 0 && loop < len - 1 && s1[loop] && s2[loop])
-	{
-		loop++;
-		diff = (unsigned char)s1[loop] - (unsigned char)s2[loop];
-	}
-	return (diff);
+	i = n;
+	if (i > ft_strlen(s1))
+		i = ft_strlen(s1) + 1;
+	if (i > ft_strlen(s2))
+		i = ft_strlen(s2) + 1;
+	return (ft_memcmp(s1, s2, i));
 }
