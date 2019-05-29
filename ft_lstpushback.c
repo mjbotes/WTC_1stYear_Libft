@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 09:44:54 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/29 10:22:50 by mbotes           ###   ########.fr       */
+/*   Created: 2019/05/28 15:25:45 by mbotes            #+#    #+#             */
+/*   Updated: 2019/05/29 09:23:25 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-int	ft_strncmp(char const *s1, char const *s2, size_t n)
+void	ft_lstpushback(t_list **lst, t_list *new)
 {
-	size_t	loop;
-	int		diff;
+	t_list	*ptr;
 
-	loop = 0;
-	if (n <= 0)
-		return (0);
-	diff = (unsigned char)s1[loop] - (unsigned char)s2[loop];
-	while (diff == 0 && loop < n - 1 && s1[loop] && s2[loop])
+	ptr = *lst;
+	if (ptr == NULL)
+		ft_lstadd(lst, new);
+	else
 	{
-		loop++;
-		diff = (unsigned char)s1[loop] - (unsigned char)s2[loop];
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+		ptr->next = new;
 	}
-	return (diff);
 }

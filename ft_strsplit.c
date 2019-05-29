@@ -6,14 +6,14 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 10:00:58 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/27 10:58:06 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/29 08:24:54 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		ft_wordcounter(char const *s, char c)
+static int	ft_wordcounter(char const *s, char c)
 {
 	unsigned int	loop;
 	unsigned int	sizey;
@@ -39,7 +39,7 @@ int		ft_wordcounter(char const *s, char c)
 	return (sizey);
 }
 
-char	**ft_wordsplit(char const *s, char c, char **arr)
+static char	**ft_wordsplit(char const *s, char c, char **arr)
 {
 	unsigned int	loop;
 	unsigned int	sizey;
@@ -65,7 +65,7 @@ char	**ft_wordsplit(char const *s, char c, char **arr)
 	return (arr);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char			**arr;
 	unsigned int	loop;

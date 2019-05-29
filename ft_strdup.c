@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 10:07:34 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/27 15:21:54 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/05/29 08:28:18 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,5 @@ char	*ft_strdup(const char *str)
 	if (!(new = ft_strnew(ft_strlen(str))))
 		return (NULL);
 	ft_strcpy(new, str);
-	return (new);
-}
-
-char	*ft_strndup(const char *str, size_t len)
-{
-	char	*new;
-
-	if (!(new = ft_strnew(len)))
-		return (NULL);
-	ft_strncpy(new, str, len + 1);
-	new[len] = '\0';
 	return (new);
 }
