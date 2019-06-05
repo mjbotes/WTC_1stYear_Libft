@@ -6,7 +6,7 @@
 /*   By: mbotes <mbotes@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:33:48 by mbotes            #+#    #+#             */
-/*   Updated: 2019/05/29 09:16:00 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/05 16:08:45 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,8 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpushback(t_list **lst, t_list *new);
+
+char				*ft_replacechr(char **str, char f, char r);
+char				*ft_strdupdel(char **str);
 
 #endif
