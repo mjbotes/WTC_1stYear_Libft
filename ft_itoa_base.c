@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 09:37:46 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/17 11:21:23 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/17 11:46:06 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char *ft_itoa_base(long long n, int base)
 
     num = (unsigned int)n;
 	loop = 0;
-	while (num > 0)
+	while (num >= 1)
 	{
-		num /= 10;
+		num /= base;
 		loop++;
 	}     
 	if ( loop == 0)
