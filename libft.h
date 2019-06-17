@@ -6,7 +6,7 @@
 /*   By: mbotes <mbotes@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:33:48 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/05 16:08:45 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/17 11:23:43 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,9 @@ void				ft_lstpushback(t_list **lst, t_list *new);
 
 char				*ft_replacechr(char **str, char f, char r);
 char				*ft_strdupdel(char **str);
+
+char				*ft_makeupper(char *str);
+int					ft_makeunsigned(int num);
+char				*ft_itoa_base( long long n, int base);
 
 #endif
