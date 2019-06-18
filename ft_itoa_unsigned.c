@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 10:48:12 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/18 16:10:41 by mbotes           ###   ########.fr       */
+/*   Created: 2019/06/18 09:05:44 by mbotes            #+#    #+#             */
+/*   Updated: 2019/06/18 09:10:30 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(intmax_t num)
+static int	ft_intlen(long unsigned int num)
 {
 	unsigned int	loop;
 
@@ -31,12 +31,12 @@ static int	ft_intlen(intmax_t num)
 	return (loop);
 }
 
-char		*ft_itoa(intmax_t n)
+char		*ft_itoa_unsigned(unsigned int n)
 {
 	unsigned int	loop;
 	char			*new;
-	intmax_t		num;
-	intmax_t		rem;
+	long unsigned int		num;
+	int				rem;
 
 	loop = ft_intlen(n);
 	if (!(new = ft_strnew(loop)))

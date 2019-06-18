@@ -6,13 +6,13 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 10:48:12 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/18 16:10:41 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/18 16:40:07 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(intmax_t num)
+static int	ft_intlen(uintmax_t num)
 {
 	unsigned int	loop;
 
@@ -31,12 +31,12 @@ static int	ft_intlen(intmax_t num)
 	return (loop);
 }
 
-char		*ft_itoa(intmax_t n)
+char		*ft_utoa(uintmax_t n)
 {
 	unsigned int	loop;
 	char			*new;
-	intmax_t		num;
-	intmax_t		rem;
+	uintmax_t		num;
+	uintmax_t		rem;
 
 	loop = ft_intlen(n);
 	if (!(new = ft_strnew(loop)))

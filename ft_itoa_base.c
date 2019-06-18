@@ -6,7 +6,7 @@
 /*   By: mbotes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 09:37:46 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/17 11:46:06 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/18 10:53:06 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ char *ft_itoa_base(long long n, int base)
 {
     static  char rep[] = "0123456789abcdef";
     static  char *buf;
-    long long     num;
+    unsigned long long     num;
 	int		loop;
-	unsigned long ret;
+	unsigned long long ret;
 
-    num = (unsigned int)n;
+    num = (unsigned long)n;
 	loop = 0;
-	while (num >= 1)
+	while (num != 0)
 	{
 		num /= base;
 		loop++;
