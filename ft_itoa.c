@@ -39,6 +39,8 @@ char		*ft_itoa(intmax_t n)
 	intmax_t		rem;
 
 	loop = ft_intlen(n);
+	if (n < -9223372036854775807)
+		return (ft_strdup("-9223372036854775808"));
 	if (!(new = ft_strnew(loop)))
 		return (NULL);
 	num = n;
