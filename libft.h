@@ -6,7 +6,7 @@
 /*   By: mbotes <mbotes@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:33:48 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/18 16:27:37 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/19 07:08:57 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char				*ft_strdupdel(char **str);
 char				*ft_makeupper(char *str);
 unsigned int		ft_makeunsigned(int num);
 char				*ft_utoa(uintmax_t n);
-char				*ft_itoa_base( long long n, int base);
+char				*ft_itoa_base(uintmax_t n, int base);
 char				*ft_dtoa(long double n);
 
 #endif
