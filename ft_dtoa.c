@@ -29,7 +29,7 @@ char	*ft_dtoa(long double n)
 	if (n < 0)
 		dec *= -1;
 	str = ft_itoa(num);
-	len = ft_strlen(str);
+	len = ft_strlen(str) + 1;
 	tmp = ft_strjoin(str, ".");
 	ft_strdel(&str);
 	while ( loop < 6 && dec != 0)
