@@ -6,7 +6,7 @@
 /*   By: mbotes <mbotes@student.wethinkcode.co.za>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:33:48 by mbotes            #+#    #+#             */
-/*   Updated: 2019/06/19 07:08:57 by mbotes           ###   ########.fr       */
+/*   Updated: 2019/06/29 11:49:24 by mbotes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <wchar.h>
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -91,9 +92,10 @@ char				*ft_replacechr(char **str, char f, char r);
 char				*ft_strdupdel(char **str);
 
 char				*ft_makeupper(char *str);
-unsigned int		ft_makeunsigned(int num);
 char				*ft_utoa(uintmax_t n);
 char				*ft_itoa_base(uintmax_t n, int base);
 char				*ft_dtoa(long double n);
+void				ft_remnchars(char **c, size_t n);
+int					ft_putwchar_t(wchar_t c);
 
 #endif
